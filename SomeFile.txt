@@ -1,0 +1,28 @@
+1.	// Create a read-only text field.
+JTextField textField = new JTextField(10);
+textField.setEditable(true);
+To create a read only text file, need to pass setEditable method “false” as the argument.
+2.	// Create a black 1-pixel border around list, a JList component.
+list.setBorder(Color.BLACK, 1);
+In creating a black 1-pixel border around list need to use BorderFactor class method createLineBorder method to set color.
+3.	 // Create a JList and add it to a scroll pane.
+// Assume that array already exists.
+JList list = new JList(array);
+JScrollPane scrollPane = new JScrollPane();
+scrollPane.add(list);
+We need to pass object that we wish to add to the scroll pane as an argument to the JScrollPane constructor. 
+4.	// Assume that nameBox is a combo box and is properly set up
+// with a list of names to choose from.
+// Get value of the selected item.
+String selectedName = nameBox.getSelectedIndex();
+The getSelectedIndex method returns the index of the selected item, so above considerations by using getSelectied item method. The getSelectedItem method returns a reference to the item that is currently selected. 
+5.	 JLabel label = new JLabel("Have a nice day!");
+label.setImage(image);
+The setIcon method accepts an ImageIcon object as its argument not setImage method.
+6.	 // Add a menu to the menu bar.
+JMenuBar menuBar = new JMenuBar(menuItem);
+	The error is at first line because JMenuBar class doesnot have parametrized constructor.it only has default constructor. So, the error is more parameters found than required.
+JMenuBar menuBar = new JMenuBar(); 
+7.	// Create a text area with 20 columns and 5 rows.
+JTextArea textArea = new JTextArea (20, 5);
+JTestArea arguments row and columns it must be JTextArea textArea = new JTextArea  (5,20);
