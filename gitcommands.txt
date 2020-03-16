@@ -1,0 +1,157 @@
+
+Abe@DESKTOP-8IUMVMG MINGW64 ~
+$ pwd
+/c/Users/Abe
+
+Abe@DESKTOP-8IUMVMG MINGW64 ~
+$ /c
+bash: /c: Is a directory
+
+Abe@DESKTOP-8IUMVMG MINGW64 ~
+$ git /c
+git: 'C:/' is not a git command. See 'git --help'.
+
+Abe@DESKTOP-8IUMVMG MINGW64 ~
+$ git /c/
+git: 'C:/' is not a git command. See 'git --help'.
+
+Abe@DESKTOP-8IUMVMG MINGW64 ~
+$ pwd
+/c/Users/Abe
+
+Abe@DESKTOP-8IUMVMG MINGW64 ~
+$ /c/Users/Abe
+bash: /c/Users/Abe: Is a directory
+
+Abe@DESKTOP-8IUMVMG MINGW64 ~
+$ cd /c
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c
+$ mkdir development
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c
+$ cd development
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development
+$ pwd
+/c/development
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development
+$ git init
+Initialized empty Git repository in C:/development/.git/
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ git svn init http://10.85.60.115/svn/CDS-WEB/moneris-payment/ --no-metadata
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ git config svn.authorsfile c:/authors.txt
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ git svn fetch
+Can't open c:/authors.txt No such file or directory
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ ^C
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ git remote add origin https://github.com/abeantor/SubversionRep.git
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/abeantor/SubversionRep.git'
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ git config --global user.name "abeantor"
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ git config --global user.email "antorabu@gmail.com"
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ git clone https://github.com/abeantor/SubversionRep.git
+Cloning into 'SubversionRep'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 201 bytes | 0 bytes/s, done.
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ ls
+SomeFile.txt  SubversionRep/
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development (master)
+$ cd SubversionRep/
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ ls
+SomeFile.txt  test.txt
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ git add SomeFile.txt
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   SomeFile.txt
+
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ git commit -m "Uploading Files" SomeFile.txt
+[master ce3819f] Uploading Files
+ 1 file changed, 28 insertions(+)
+ create mode 100644 SomeFile.txt
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ git push -u origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.06 KiB | 1.06 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/abeantor/SubversionRep.git
+   fbaafd2..ce3819f  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ git commit -m "Change" test.txt
+[master edf2e76] Change
+ 1 file changed, 355 insertions(+), 1 deletion(-)
+ rewrite test.txt (100%)
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.75 KiB | 1.37 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/abeantor/SubversionRep.git
+   ce3819f..edf2e76  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ ^C
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$ ^C
+
+Abe@DESKTOP-8IUMVMG MINGW64 /c/development/SubversionRep (master)
+$
